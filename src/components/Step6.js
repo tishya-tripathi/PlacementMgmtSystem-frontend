@@ -67,9 +67,9 @@ export default function Step6({ formData, setFormData }) {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
-            value={formData.cetRank}
+            value={formData.comedkRank}
             onChange={(event) =>
-              setFormData({ ...formData, cetRank: event.target.value })
+              setFormData({ ...formData, comedkRank: event.target.value })
             }
             required
             id="comedk-rank"
