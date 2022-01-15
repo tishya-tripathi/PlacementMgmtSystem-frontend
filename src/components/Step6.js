@@ -40,7 +40,10 @@ export default function Step6({ formData, setFormData }) {
             select
             label="Select"
             value={formData.admissionQuota}
-            onChange={handleChange}
+            onChange={(event) => {
+              { handleChange(event) };
+              setFormData({ ...formData, admissionQuota: event.target.value })
+            }}
             helperText="Please select your Admission Quota"
             fullWidth
           >

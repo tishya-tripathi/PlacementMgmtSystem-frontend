@@ -167,7 +167,10 @@ export default function Step1({ formData, setFormData }) {
             select
             label="Select"
             value={formData.branch}
-            onChange={handleChangeBranch}
+            onChange={(event) => {
+              { handleChangeBranch(event) };
+              setFormData({ ...formData, branch: event.target.value })
+            }}
             helperText="Please select your Branch"
             fullWidth
           >
@@ -186,7 +189,10 @@ export default function Step1({ formData, setFormData }) {
             select
             label="Select"
             value={formData.gender}
-            onChange={handleChangeGender}
+            onChange={(event) => {
+              { handleChangeGender(event) };
+              setFormData({ ...formData, gender: event.target.value })
+            }}
             helperText="Please select your Gender"
             fullWidth
           >
