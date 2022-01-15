@@ -21,7 +21,7 @@ const quotaList = [
   },
 ];
 
-export default function Step6() {
+export default function Step6({ formData, setFormData }) {
   const [quotaValue, setQuotaValue] = React.useState("");
   const handleChange = (event) => {
     setQuotaValue(event.target.value);
@@ -39,7 +39,7 @@ export default function Step6() {
             id="quota"
             select
             label="Select"
-            value={quotaValue}
+            value={formData.admissionQuota}
             onChange={handleChange}
             helperText="Please select your Admission Quota"
             fullWidth
@@ -53,6 +53,10 @@ export default function Step6() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.cetRank}
+            onChange={(event) =>
+              setFormData({ ...formData, cetRank: event.target.value })
+            }
             required
             id="cet-rank"
             name="cet-rank"
@@ -63,6 +67,10 @@ export default function Step6() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.cetRank}
+            onChange={(event) =>
+              setFormData({ ...formData, cetRank: event.target.value })
+            }
             required
             id="comedk-rank"
             name="comedk-rank"
@@ -78,8 +86,12 @@ export default function Step6() {
         Backlogs and Year Gap
       </Typography>
       <Grid container spacing={5}>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <TextField
+            value={formData.noOfBacklogs}
+            onChange={(event) =>
+              setFormData({ ...formData, noOfBacklogs: event.target.value })
+            }
             required
             id="no-of-backlog"
             name="no-of-backlog"
@@ -91,6 +103,10 @@ export default function Step6() {
 
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.yearGap10and12}
+            onChange={(event) =>
+              setFormData({ ...formData, yearGap10and12: event.target.value })
+            }
             required
             id="year-gap-10-to-12"
             name="year-gap-10-to-12"
@@ -101,6 +117,10 @@ export default function Step6() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.yearGap12andBE}
+            onChange={(event) =>
+              setFormData({ ...formData, yearGap12andBE: event.target.value })
+            }
             required
             id="year-gap-12-to-be"
             name="year-gap-12-to-be"
@@ -111,6 +131,10 @@ export default function Step6() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.yearGapDuringBE}
+            onChange={(event) =>
+              setFormData({ ...formData, yearGapDuringBE: event.target.value })
+            }
             required
             id="year-gap-during-be"
             name="year-gap-during-be"

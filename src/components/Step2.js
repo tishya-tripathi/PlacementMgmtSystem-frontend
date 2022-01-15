@@ -5,8 +5,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Divider from "@mui/material/Divider";
 
-
-export default function Step2() {
+export default function Step2({ formData, setFormData }) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -15,6 +14,10 @@ export default function Step2() {
       <Grid container spacing={5}>
         <Grid item xs={12}>
           <TextField
+            value={formData.addressLine1}
+            onChange={(event) =>
+              setFormData({ ...formData, addressLine1: event.target.value })
+            }
             required
             id="addressLine1"
             name="addressLine1"
@@ -25,6 +28,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12}>
           <TextField
+            value={formData.addressLine2}
+            onChange={(event) =>
+              setFormData({ ...formData, addressLine2: event.target.value })
+            }
             id="addressLine2"
             name="addressLine2"
             label="Address Line 2"
@@ -34,6 +41,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.city}
+            onChange={(event) =>
+              setFormData({ ...formData, city: event.target.value })
+            }
             required
             id="city"
             name="city"
@@ -44,6 +55,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.state}
+            onChange={(event) =>
+              setFormData({ ...formData, state: event.target.value })
+            }
             id="state"
             name="state"
             label="State/Province/Region"
@@ -53,6 +68,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.pincode}
+            onChange={(event) =>
+              setFormData({ ...formData, pincode: event.target.value })
+            }
             required
             id="zip"
             name="zip"
@@ -63,6 +82,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.country}
+            onChange={(event) =>
+              setFormData({ ...formData, country: event.target.value })
+            }
             required
             id="country"
             name="country"

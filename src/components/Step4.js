@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Divider from "@mui/material/Divider";
 
-export default function Step4() {
+export default function Step4({ formData, setFormData }) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -14,9 +14,13 @@ export default function Step4() {
       <Grid container spacing={5}>
         <Grid item xs={12}>
           <TextField
+            value={formData.class10School}
+            onChange={(event) =>
+              setFormData({ ...formData, class10School: event.target.value })
+            }
             required
-            id="class-10-school"
-            name="class-10-school"
+            id="class_10_school"
+            name="class_10_school"
             label="Name of School"
             fullWidth
             variant="standard"
@@ -24,6 +28,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class10Board}
+            onChange={(event) =>
+              setFormData({ ...formData, class10Board: event.target.value })
+            }
             required
             id="class-10-board"
             name="class-10-board"
@@ -34,6 +42,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class10Year}
+            onChange={(event) =>
+              setFormData({ ...formData, class10Year: event.target.value })
+            }
             required
             id="class-10-year"
             name="class-10-year"
@@ -44,6 +56,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class10State}
+            onChange={(event) =>
+              setFormData({ ...formData, class10State: event.target.value })
+            }
             required
             id="class-10-state"
             name="class-10-state"
@@ -54,6 +70,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class10Grades}
+            onChange={(event) =>
+              setFormData({ ...formData, class10Grades: event.target.value })
+            }
             required
             id="class-10-grades"
             name="class-10-grades"
@@ -71,6 +91,10 @@ export default function Step4() {
       <Grid container spacing={5}>
         <Grid item xs={12}>
           <TextField
+            value={formData.class12School}
+            onChange={(event) =>
+              setFormData({ ...formData, class12School: event.target.value })
+            }
             required
             id="class-12-school"
             name="class-12-school"
@@ -81,6 +105,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class12Board}
+            onChange={(event) =>
+              setFormData({ ...formData, class12Board: event.target.value })
+            }
             required
             id="class-12-board"
             name="class-12-board"
@@ -91,6 +119,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class12Year}
+            onChange={(event) =>
+              setFormData({ ...formData, class12Year: event.target.value })
+            }
             required
             id="class-12-year"
             name="class-12-year"
@@ -101,6 +133,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class12State}
+            onChange={(event) =>
+              setFormData({ ...formData, class12State: event.target.value })
+            }
             required
             id="class-12-state"
             name="class-12-state"
@@ -111,6 +147,10 @@ export default function Step4() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.class12Grades}
+            onChange={(event) =>
+              setFormData({ ...formData, class12Grades: event.target.value })
+            }
             required
             id="class-12-grades"
             name="class-12-grades"

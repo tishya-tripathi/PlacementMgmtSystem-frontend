@@ -57,12 +57,15 @@ const branchList = [
   },
 ];
 
-export default function Step1() {
+export default function Step1({ formData, setFormData }) {
   const [genderValue, setGenderValue] = React.useState("");
   const [branchValue, setBranchValue] = React.useState("");
-  const [dateOfBirth, setDateOfBirth] = React.useState(new Date());
-  const handleChange = (event) => {
+  const [dateOfBirth, setDateOfBirth] = React.useState();
+
+  const handleChangeGender = (event) => {
     setGenderValue(event.target.value);
+  };
+  const handleChangeBranch = (event) => {
     setBranchValue(event.target.value);
   };
 
@@ -74,7 +77,10 @@ export default function Step1() {
       <Grid container spacing={5}>
         <Grid item xs={12} sm={4}>
           <TextField
-            autoFocus
+            value={formData.fName}
+            onChange={(event) =>
+              setFormData({ ...formData, fName: event.target.value })
+            }
             required
             id="firstName"
             name="firstName"
@@ -85,6 +91,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.mName}
+            onChange={(event) =>
+              setFormData({ ...formData, mName: event.target.value })
+            }
             required
             id="middleName"
             name="middleName"
@@ -95,6 +105,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.lName}
+            onChange={(event) =>
+              setFormData({ ...formData, lName: event.target.value })
+            }
             required
             id="lastName"
             name="lastName"
@@ -108,9 +122,9 @@ export default function Step1() {
             <DatePicker
               views={["day"]}
               label="Your Date of Birth"
-              value={dateOfBirth}
-              onChange={(newValue) => {
-                setDateOfBirth(newValue);
+              value={new Date()}
+              onChange={(event) => {
+                setDateOfBirth(event);
               }}
               renderInput={(params) => (
                 <TextField {...params} helperText={null} />
@@ -120,6 +134,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.usn}
+            onChange={(event) =>
+              setFormData({ ...formData, usn: event.target.value })
+            }
             required
             fullWidth
             id="usn"
@@ -130,6 +148,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.fatherName}
+            onChange={(event) =>
+              setFormData({ ...formData, fatherName: event.target.value })
+            }
             required
             id="fatherName"
             name="fatherName"
@@ -144,8 +166,8 @@ export default function Step1() {
             id="branch"
             select
             label="Select"
-            value={branchValue}
-            onChange={handleChange}
+            value={formData.branch}
+            onChange={handleChangeBranch}
             helperText="Please select your Branch"
             fullWidth
           >
@@ -163,8 +185,8 @@ export default function Step1() {
             id="gender"
             select
             label="Select"
-            value={genderValue}
-            onChange={handleChange}
+            value={formData.gender}
+            onChange={handleChangeGender}
             helperText="Please select your Gender"
             fullWidth
           >
@@ -185,6 +207,10 @@ export default function Step1() {
       <Grid container spacing={5}>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.studentMobile}
+            onChange={(event) =>
+              setFormData({ ...formData, studentMobile: event.target.value })
+            }
             required
             fullWidth
             variant="standard"
@@ -195,6 +221,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.parentMobile}
+            onChange={(event) =>
+              setFormData({ ...formData, parentMobile: event.target.value })
+            }
             required
             fullWidth
             variant="standard"
@@ -205,6 +235,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.studentEmail}
+            onChange={(event) =>
+              setFormData({ ...formData, studentEmail: event.target.value })
+            }
             required
             fullWidth
             id="email"
@@ -215,6 +249,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.parentEmail}
+            onChange={(event) =>
+              setFormData({ ...formData, parentEmail: event.target.value })
+            }
             required
             fullWidth
             id="parentEmail"
@@ -225,6 +263,10 @@ export default function Step1() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.rnsitEmail}
+            onChange={(event) =>
+              setFormData({ ...formData, rnsitEmail: event.target.value })
+            }
             required
             fullWidth
             id="rnsEmail"
@@ -234,7 +276,7 @@ export default function Step1() {
           />
         </Grid>
       </Grid>
-      
+
       <Divider sx={{ marginTop: 8, marginBottom: 2 }} />
     </React.Fragment>
   );

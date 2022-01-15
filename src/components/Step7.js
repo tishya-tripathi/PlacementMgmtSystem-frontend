@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 import Checkbox from "@mui/material/Checkbox";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 
-export default function Step7() {
+export default function Step7({ formData, setFormData }) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -16,6 +16,10 @@ export default function Step7() {
       <Grid container spacing={5}>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.skypeID}
+            onChange={(event) =>
+              setFormData({ ...formData, skypeID: event.target.value })
+            }
             required
             id="skype-id"
             name="skype-id"
@@ -26,6 +30,10 @@ export default function Step7() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.githubID}
+            onChange={(event) =>
+              setFormData({ ...formData, githubID: event.target.value })
+            }
             required
             id="github-id"
             name="github-id"
@@ -36,6 +44,10 @@ export default function Step7() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.linkedinID}
+            onChange={(event) =>
+              setFormData({ ...formData, linkedinID: event.target.value })
+            }
             required
             id="linkedin-id"
             name="linkedin-id"
@@ -51,26 +63,30 @@ export default function Step7() {
         Certificates/ Achievements from recognized body.
       </Typography>
       <Grid container spacing={5}>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <TextareaAutosize
+            value={formData.studentAchievements}
+            onChange={(event) =>
+              setFormData({
+                ...formData,
+                studentAchievements: event.target.value,
+              })
+            }
             aria-label="minimum height"
             minRows={5}
             minLength={30}
-            placeholder= " Certificates/ Achievements..."
+            placeholder=" Certificates/ Achievements..."
             style={{ width: "100%" }}
           />
         </Grid>
         <Grid item xs={12}>
           <FormControlLabel
-            control={
-              <Checkbox color="success" />
-            }
+            control={<Checkbox color="success" />}
             label=" &nbsp;I agree the above informations are correct to my knowledge."
           />
         </Grid>
       </Grid>
       <Divider sx={{ marginTop: 8, marginBottom: 2 }} />
-
     </React.Fragment>
   );
 }

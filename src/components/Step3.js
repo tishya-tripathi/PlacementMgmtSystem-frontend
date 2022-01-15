@@ -5,15 +5,19 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Divider from "@mui/material/Divider";
 
-export default function Step2() {
+export default function Step2({ formData, setFormData }) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Further Details
       </Typography>
       <Grid container spacing={5}>
-      <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.citizenship}
+            onChange={(event) =>
+              setFormData({ ...formData, citizenship: event.target.value })
+            }
             required
             id="citizenship"
             name="citizenship"
@@ -25,6 +29,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.passportNo}
+            onChange={(event) =>
+              setFormData({ ...formData, passportNo: event.target.value })
+            }
             required
             id="passportNo"
             name="passportNo"
@@ -35,6 +43,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.aadharNo}
+            onChange={(event) =>
+              setFormData({ ...formData, aadharNo: event.target.value })
+            }
             required
             id="aadharNo"
             name="aadharNo"
@@ -45,6 +57,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.panNo}
+            onChange={(event) =>
+              setFormData({ ...formData, panNo: event.target.value })
+            }
             required
             id="panNo"
             name="panNo"
@@ -55,6 +71,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.voterNo}
+            onChange={(event) =>
+              setFormData({ ...formData, voterNo: event.target.value })
+            }
             required
             id="voterNo"
             name="voterNo"
@@ -65,6 +85,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <TextField
+            value={formData.drivingLicenseNo}
+            onChange={(event) =>
+              setFormData({ ...formData, drivingLicenseNo: event.target.value })
+            }
             required
             id="drivingLicenseNo"
             name="drivingLicenseNo"
@@ -73,15 +97,18 @@ export default function Step2() {
             variant="standard"
           />
         </Grid>
-        
       </Grid>
       <Divider sx={{ marginTop: 8, marginBottom: 2 }} />
       <Typography variant="h6" gutterBottom>
         Bank Details
       </Typography>
       <Grid container spacing={5}>
-      <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.bankAcctNo}
+            onChange={(event) =>
+              setFormData({ ...formData, bankAcctNo: event.target.value })
+            }
             required
             id="accountNo"
             name="accountNo"
@@ -92,6 +119,10 @@ export default function Step2() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            value={formData.bankName}
+            onChange={(event) =>
+              setFormData({ ...formData, bankName: event.target.value })
+            }
             required
             id="bankNo"
             name="bankNo"
@@ -102,7 +133,6 @@ export default function Step2() {
         </Grid>
       </Grid>
       <Divider sx={{ marginTop: 8, marginBottom: 2 }} />
-      
     </React.Fragment>
   );
 }

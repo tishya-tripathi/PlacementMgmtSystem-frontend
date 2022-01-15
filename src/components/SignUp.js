@@ -97,13 +97,16 @@ export default function SignUp() {
   const [genderValue, setGenderValue] = React.useState("");
   const [branchValue, setBranchValue] = React.useState("");
   const [dateOfBirth, setDateOfBirth] = React.useState(new Date());
-  const handleChange = (event) => {
-    setGenderValue(event.target.value);
+  const handleBranchChange = (event) => {
     setBranchValue(event.target.value);
   };
+  const handleGenderChange = (event) => {
+    setGenderValue(event.target.value);
+  };
 
+  
   return (
-    <Container component="main" maxWidth="sm">
+    <Container component="main" maxWidth="sm" sx={{minHeight:"90vh",}}>
       <CssBaseline />
       <Box
         sx={{
@@ -157,7 +160,7 @@ export default function SignUp() {
                 select
                 label="Select"
                 value={branchValue}
-                onChange={handleChange}
+                onChange={handleBranchChange}
                 helperText="Please select your Branch"
                 fullWidth
               >
@@ -174,7 +177,7 @@ export default function SignUp() {
                 select
                 label="Select"
                 value={genderValue}
-                onChange={handleChange}
+                onChange={handleGenderChange}
                 helperText="Please select your Gender"
                 fullWidth
               >

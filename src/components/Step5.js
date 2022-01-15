@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Divider from "@mui/material/Divider";
 
-export default function Step5() {
+export default function Step5({ formData, setFormData }) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -14,9 +14,13 @@ export default function Step5() {
       <Grid container spacing={5}>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem1}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem1: event.target.value })
+            }
             required
-            id="sgpa-sem-1"
-            name="sgpa-sem-1"
+            id="sgpa_sem_1"
+            name="sgpa_sem_1"
             label="Semester 1"
             fullWidth
             variant="standard"
@@ -24,6 +28,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem2}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem2: event.target.value })
+            }
             required
             id="sgpa-sem-2"
             name="sgpa-sem-2"
@@ -34,6 +42,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem3}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem3: event.target.value })
+            }
             required
             id="sgpa-sem-3"
             name="sgpa-sem-3"
@@ -44,6 +56,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem4}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem4: event.target.value })
+            }
             required
             id="sgpa-sem-4"
             name="sgpa-sem-4"
@@ -54,6 +70,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem4}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem4: event.target.value })
+            }
             required
             id="sgpa-sem-5"
             name="sgpa-sem-5"
@@ -64,6 +84,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem6}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem6: event.target.value })
+            }
             required
             id="sgpa-sem-6"
             name="sgpa-sem-6"
@@ -74,6 +98,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem7}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem7: event.target.value })
+            }
             required
             id="sgpa-sem-7"
             name="sgpa-sem-7"
@@ -84,6 +112,10 @@ export default function Step5() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.sgpaSem8}
+            onChange={(event) =>
+              setFormData({ ...formData, sgpaSem8: event.target.value })
+            }
             required
             id="sgpa-sem-8"
             name="sgpa-sem-8"
@@ -100,8 +132,12 @@ export default function Step5() {
         C.G.P.A.
       </Typography>
       <Grid container spacing={5}>
-      <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={3}>
           <TextField
+            value={formData.cgpa}
+            onChange={(event) =>
+              setFormData({ ...formData, cgpa: event.target.value })
+            }
             required
             id="cgpa"
             name="cgpa"
